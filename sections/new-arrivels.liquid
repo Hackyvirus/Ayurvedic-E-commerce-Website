@@ -1,0 +1,89 @@
+<div class="slider-title">
+    <p>Welcome Our</p>
+    <h2>New Arrivals</h2>
+</div>
+<div class="product-slider-1">
+  <img width=""  height=""  src="{{ 'left.png' | asset_url }}" class="scroll-arrow" id="right-arrow2" alt="Scroll Right">  
+<div class="scroll-container2">
+<div class="product">
+    <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
+    <div class="product-details">
+      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
+      <p class="price">$ 36</p>
+      <p>Lorem, ipsum.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product">
+    <img width=""  height="" class="product-img" src="{{ 'product2.png' | asset_url }}" alt="Cinque Terre">
+    <div class="product-details">
+      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
+      <p class="price">$ 36</p>
+      <p>Lorem, ipsum.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product">
+    <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
+    <div class="product-details">
+      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
+      <p class="price">$ 36</p>
+      <p>Lorem, ipsum.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product">
+    <img width=""  height="" class="product-img" src="{{ 'product2.png' | asset_url }}" alt="Cinque Terre">
+    <div class="product-details">
+      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
+      <p class="price">$ 36</p>
+      <p>Lorem, ipsum.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product">
+    <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
+    <div class="product-details">
+      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
+      <p class="price">$ 36</p>
+      <p>Lorem, ipsum.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product">
+    <img width=""  height="" class="product-img" src="{{ 'product2.png' | asset_url }}" alt="Cinque Terre">
+    <div class="product-details">
+      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
+      <p class="price">$ 36</p>
+      <p>Lorem, ipsum.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  <!-- Repeat product divs as necessary -->
+  </div>
+  <img  width=""  height="" src="{{ 'right.png' | asset_url }}" class="scroll-arrow" id="left-arrow2" alt="Scroll Left">
+</div>
+
+<div class="more-product">
+  <hr class="product-hr">
+  <div class="more">
+    View All
+  </div>
+</div>
+
+<script>
+  document.getElementById('left-arrow2').addEventListener('click', function() {
+  document.querySelector('.scroll-container2').scrollBy({
+    left: -380, // Adjust this value to match the width of a product card plus margin
+    behavior: 'smooth'
+  });
+});
+
+document.getElementById('right-arrow2').addEventListener('click', function() {
+  document.querySelector('.scroll-container2').scrollBy({
+    left: 380, // Adjust this value to match the width of a product card plus margin
+    behavior: 'smooth'
+  });
+});
+
+</script>
