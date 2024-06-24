@@ -1,0 +1,155 @@
+<div class="testo-section">
+	<div class="slider-title">
+    <h2>Testomonials</h2>
+</div>
+<!-- Testimonial Section -->
+<div class="testimonial-section">
+  <!-- Left Arrow -->
+  <div class="left-arrow" onclick="showPreviousTestimonial()">
+    <img class="arrow" width="" height="" src="{{ 'left.png' | asset_url }}" alt="Left Arrow">
+  </div>
+  
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <div class="testimonial" id="testimonial1">
+     <div class="testomonial-box">
+		<img width="" height="" src="{{ 'product1.png' | asset_url }}" alt="User 1" class="profile-img">
+		<p class="message">"This is the first testimonial message. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, dolore. "</p>
+	<div class="rating">
+		<p><img src="{{'rating-stars.png' |  asset_url}}" width="" height="25px" alt=""></p>
+	</div>
+	 </div>
+    </div>
+    <div class="testimonial" id="testimonial2" style="display: none;">
+		<div class="testomonial-box">
+			<img width="" height="" src="{{ 'product2.png' | asset_url }}" alt="User 1" class="profile-img">
+			<p class="message">" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam exercitationem velit tempora libero numquam consequatur. "</p>
+	<div class="rating">
+		<p><img src="{{'rating-stars.png' |  asset_url}}" width="" height="25px" alt=""></p>
+	</div>
+	 </div>
+    </div>
+    <div class="testimonial" id="testimonial3" style="display: none;">
+		<div class="testomonial-box">
+			<img width="" height="" src="{{ 'product3.png' | asset_url }}" alt="User 1" class="profile-img">
+			<p class="message">"This is the first testimonial message. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, ab. "</p>
+	<div class="rating">
+		<p class="user-name">
+			<img src="{{'rating-stars.png' |  asset_url}}" width="" height="25px" alt=""></p>
+	</div>
+	 </div>
+    </div>
+  </div>
+  
+  <!-- Right Arrow -->
+  <div class="right-arrow" onclick="showNextTestimonial()">
+    <img class="arrow" width="" height="" src="{{ 'right.png' | asset_url }}" alt="Right Arrow">
+  </div>
+</div>
+</div>
+<!-- CSS -->
+<style>
+	.testo-section{
+		width: 81dvw;
+		margin: auto;
+		height: 500px;
+	}
+.testimonial-section {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 81dvw;
+	margin: auto;
+	height: 440px;
+}
+
+  .arrow {
+    cursor: pointer;
+	width: 30px;
+	height: 30px;
+  }
+  .testimonials {
+	width: 100%;
+	height: 450px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.testimonial {
+	width: 85%;
+	margin: auto;
+	height: 400px;
+}
+.testomonial-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 85%;
+	margin: auto;
+	text-align: center;
+	height: 400px;
+}
+  .testimonial.active {
+    display: block;
+  }
+  .profile-img {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+.message {
+	margin-bottom: 5px;
+	width: 95%;
+	font-family: Lora;
+	font-size: 20px;
+}
+.rating{
+	width: 60%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.rating p {
+	font-size: 20px;
+	font-family: Montserrat,sans-serif;
+	font-weight: normal;
+}
+  .user-name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  let currentTestimonial = 0;
+  const testimonials = document.querySelectorAll('.testimonial');
+
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      testimonial.style.display = 'none';
+      if (i === index) {
+        testimonial.style.display = 'block';
+      }
+    });
+  }
+
+  function showPreviousTestimonial() {
+    currentTestimonial = (currentTestimonial > 0) ? currentTestimonial - 1 : testimonials.length - 1;
+    showTestimonial(currentTestimonial);
+  }
+
+  function showNextTestimonial() {
+    currentTestimonial = (currentTestimonial < testimonials.length - 1) ? currentTestimonial + 1 : 0;
+    showTestimonial(currentTestimonial);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    showTestimonial(currentTestimonial);
+  });
+</script>
+

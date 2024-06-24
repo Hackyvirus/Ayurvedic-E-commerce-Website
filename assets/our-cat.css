@@ -96,8 +96,9 @@ div.scroll-container3::-webkit-scrollbar {
 }
 
 .scroll-arrow {
-  cursor: pointer;
-  width: 30px;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
 }
 
 .product-slider-3{
@@ -117,6 +118,7 @@ div.scroll-container3::-webkit-scrollbar {
 	display: flex;
 	flex-direction: column;
 	font-size: 40px;
+  color: #1E2B00;
 	font-family: Lora;
   justify-content: center;
 }
