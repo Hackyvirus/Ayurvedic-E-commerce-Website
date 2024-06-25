@@ -5,5 +5,9 @@
   margin: 0;
 }
 
-/* font-family: "Montserrat", sans-serif;
-font-family: "Lora", sans-serif; */
+body::-webkit-scrollbar{
+  display: none;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+  overflow: hidden; 
+}

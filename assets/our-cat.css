@@ -112,15 +112,15 @@ div.scroll-container3::-webkit-scrollbar {
 
 .slider-title {
 	width: 81vw;
-	margin: auto auto 15px;
+	margin: 20px auto;
 	height: 70px;
 	font-weight: 400;
 	display: flex;
 	flex-direction: column;
 	font-size: 40px;
-  color: #1E2B00;
 	font-family: Lora;
-  justify-content: center;
+	justify-content: center;
+	margin-top: 50px;
 }
 .slider-title3 h2{
   height: 70px;
