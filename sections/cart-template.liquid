@@ -1,6 +1,9 @@
 <div class="cart">
-  <h1>Your Cart</h1>
+  <div class="slider-title">
+    <h2>Your Cart</h2>
+</div>
   {% if cart.item_count > 0 %}
+    
     <form action="/cart" method="post" novalidate>
       <div class="cart-items">
         {% for item in cart.items %}
