@@ -18,10 +18,17 @@
 
    <a href="/"> <img id="logo" src="{{'logo.png' |  asset_url}}" width="150" height="auto" alt="logo"></a>
 
-    <div class="address"> 
-      <a href="#store-location">Store Location</a>
-      <a href="/profile"> <img src="{{'profile.png' |  asset_url}}"  width="50px" height="50px" alt="profile"></a>
-     <a href="/cart"> <img src="{{'cart.png' |  asset_url}}"  width="50px" height="50px" alt="cart"></a>
+    <div class="address">     
+    {% if customer %}
+      <a href="/account"> <img src="{{'profile.png' |  asset_url}}"  width="50px" height="50px" alt="profile"></a>
+      <a href="/cart"> <img src="{{'cart.png' |  asset_url}}"  width="50px" height="50px" alt="cart"></a>
+        <a href="/account/logout">Logout</a>
+    {% else %}
+      <a href="/account/login">Login</a>
+      <a href="/account/register">Register</a>
+    {% endif %}
+
+     
     </div>
   </nav>
   <hr class="nav-hr"> 

@@ -1,8 +1,29 @@
-<div class="login">
-  <h1>Login</h1>
-  {% form 'customer_login' %}
-    <input type="email" name="customer[email]" placeholder="Email" required>
-    <input type="password" name="customer[password]" placeholder="Password" required>
-    <button type="submit">Login</button>
-  {% endform %}
+{% layout none %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}">
+</head>
+<body>
+
+<div class="login-form">
+    <h1>Login</h1>
+    <form method="post" action="/account/login">
+        <input type="hidden" name="form_type" value="customer_login">
+        <input type="hidden" name="utf8" value="✓">
+
+        <label for="CustomerEmail">Email</label>
+        <input type="email" name="customer[email]" id="CustomerEmail" required>
+
+        <label for="CustomerPassword">Password</label>
+        <input type="password" name="customer[password]" id="CustomerPassword" required>
+
+        <input type="submit" value="Login">
+    </form>
+    <p><a href="/account/register">Create account</a></p>
 </div>
+
+</body>
+</html>

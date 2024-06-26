@@ -35,14 +35,15 @@ div.scroll-container3::-webkit-scrollbar {
 	position: absolute;
 	top: 40%;
 	left: 50%;
-	transform: translateX(-50%);
-	background: white;
+	transform: translate(-50%);
+	background: #fff;
 	padding: 10px 20px;
 	border-radius: 5px;
 	font-size: 20px;
 	font-family: Lora;
-  font-weight: normal;
-  cursor: pointer;
+	font-weight: 400;
+	cursor: pointer;
+	color: black;
 }
 
 .product-img {
