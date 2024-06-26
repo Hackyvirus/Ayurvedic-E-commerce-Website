@@ -6,7 +6,6 @@ div.scroll-container {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
-  align-items: center;
   box-sizing: border-box;
   position: relative;
   margin: 5px 21px;
@@ -30,17 +29,17 @@ div.scroll-container::-webkit-scrollbar {
 }
 
 .product {
-  border: 2px solid white;
-  background: #fff;
-  height: 100%; /* Adjusted to fit the container */
-  width: 380px;
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  margin: 0 10px; /* Add margin to separate products */
+	border: 2px solid white;
+	background: #fff;
+	height: 100%;
+	width: 380px;
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	box-shadow: 0 4px 8px #0003;
+	box-sizing: border-box;
+	margin: 0 10px;
 }
 
 .product-img {
@@ -50,14 +49,14 @@ div.scroll-container::-webkit-scrollbar {
 }
 
 .product-details {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  color: #000;
-  height: 185px;
-  justify-content: space-evenly;
-  box-sizing: border-box;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	color: #000;
+	height: 152px;
+	justify-content: space-between;
+	box-sizing: border-box;
 }
 
 .product-title {
@@ -84,11 +83,28 @@ div.scroll-container::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  background-color: white;
+  color: black;
   cursor: pointer;
 }
+.go-to-cart {
+  font-family: Montserrat;
+  width: 100%; /* Full width */
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #2f7c41;
+  color: white;
+}
+
 
 .add-to-cart:hover {
-  background: radial-gradient(#748c3c, #5f7728, #4b5e1e);
+  background:  #2f7c41;;
   color: #fff;
 }
 
@@ -168,3 +184,28 @@ div.scroll-container::-webkit-scrollbar {
   background: radial-gradient(#748c3c, #5f7728, #4b5e1e);
   color: #fff;
 }
+
+
+.shopify-product-form{
+	font-family: Montserrat;
+	width: 100%;
+	height: 50px;
+	border: 1px solid black;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.product-link {
+	height: 461px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+  text-decoration: none;
+}
+
+
+

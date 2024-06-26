@@ -1,3 +1,19 @@
+<style>
+  .product2-link{
+    border: 2px solid white;
+  background: #fff;
+  height: 100%;
+  width: 380px;
+  flex: 0 0 auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px #0003;
+  box-sizing: border-box;
+  margin: 0 10px;
+  }
+</style>
 <div class="slider-title">
     <p>Explore</p>
     <h2>Our Categories</h2>
@@ -5,48 +21,72 @@
 <div class="product-slider-1">
   <img width=""  height=""  src="{{ 'left.png' | asset_url }}" class="scroll-arrow" id="right-arrow3" alt="Scroll Right">  
 <div class="scroll-container3">
-<div class="product2">
+
+  <a href="/collections/skin-care" class="product2-link">
+    <div class="product2">
+        <img width="" height="" class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
+        <div class="cat-title">
+            Skin Care
+        </div>
+        <button class="add-to-cart2">Shop Now</button>
+    </div>
+</a>
+
+<a href="/collections/hair-care" class="product2-link">
+  <div class="product2">
     <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
     <div class="cat-title">
-      Skin Care
+      Hair Care
     </div>
     <button class="add-to-cart2">Shop Now</button>
   </div>
-<div class="product2">
+</a>
+<a href="/collections/make-up" class="product2-link">
+  <div class="product2">
     <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
     <div class="cat-title">
-      Skin Care
+      Make Up
     </div>
     <button class="add-to-cart2">Shop Now</button>
   </div>
-<div class="product2">
+</a>
+<a href="/collections/body-care" class="product2-link">
+  <div class="product2">
     <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
     <div class="cat-title">
-      Skin Care
+    Body Care
     </div>
     <button class="add-to-cart2">Shop Now</button>
   </div>
-<div class="product2">
+</a>
+<a href="/collections/supplements" class="product2-link">
+  <div class="product2">
     <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
     <div class="cat-title">
-      Skin Care
+      Supplements
     </div>
     <button class="add-to-cart2">Shop Now</button>
   </div>
-<div class="product2">
+</a>
+<a href="/collections/combos" class="product2-link">
+  <div class="product2">
     <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
     <div class="cat-title">
-      Skin Care
+      Combos
     </div>
     <button class="add-to-cart2">Shop Now</button>
   </div>
-<div class="product2">
+</a>
+<a href="/collections/gifting" class="product2-link">
+  <div class="product2">
     <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
     <div class="cat-title">
-      Skin Care
+      Gifting
     </div>
     <button class="add-to-cart2">Shop Now</button>
   </div>
+</a>
+
     </div>
   <img  width=""  height="" src="{{ 'right.png' | asset_url }}" class="scroll-arrow" id="left-arrow3" alt="Scroll Left">
 </div>

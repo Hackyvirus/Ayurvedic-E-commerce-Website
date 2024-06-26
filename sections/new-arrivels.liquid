@@ -5,60 +5,24 @@
 <div class="product-slider-1">
   <img width=""  height=""  src="{{ 'left.png' | asset_url }}" class="scroll-arrow" id="right-arrow2" alt="Scroll Right">  
 <div class="scroll-container2">
-<div class="product">
-    <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
-    <div class="product-details">
-      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
-      <p class="price">$ 36</p>
-      <p>Lorem, ipsum.</p>
-      <button class="add-to-cart">Add to Cart</button>
+  {% for product in collections['new-arrivals'].products %}
+    <div class="product">
+     <a class="product-link" href="{{ product.url }}"> 
+      {% for image in product.images %}
+        <img class="product-img" width="" height="" src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt | escape }}">
+      {% endfor %}
+      <div class="product-details">
+        <h2 class="product-title">Transformative Saundarya Night Cream</h2>
+        <p class="price"> {{ product.price | money }} </p>
+        <p class="discription">{{ product.discription  }}</p>
+        </div>
+     </a>
+     <form id="product-form-{{ product.id }}" action="/cart/add" method="post">
+     <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+     <button id="add-to-cart-button-{{ product.id }}" class="add-to-cart" type="button">Add to Cart</button>
+  </form>  
     </div>
-  </div>
-  <div class="product">
-    <img width=""  height="" class="product-img" src="{{ 'product2.png' | asset_url }}" alt="Cinque Terre">
-    <div class="product-details">
-      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
-      <p class="price">$ 36</p>
-      <p>Lorem, ipsum.</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="product">
-    <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
-    <div class="product-details">
-      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
-      <p class="price">$ 36</p>
-      <p>Lorem, ipsum.</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="product">
-    <img width=""  height="" class="product-img" src="{{ 'product2.png' | asset_url }}" alt="Cinque Terre">
-    <div class="product-details">
-      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
-      <p class="price">$ 36</p>
-      <p>Lorem, ipsum.</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="product">
-    <img width=""  height=""  class="product-img" src="{{ 'product1.png' | asset_url }}" alt="Cinque Terre">
-    <div class="product-details">
-      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
-      <p class="price">$ 36</p>
-      <p>Lorem, ipsum.</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-  </div>
-  <div class="product">
-    <img width=""  height="" class="product-img" src="{{ 'product2.png' | asset_url }}" alt="Cinque Terre">
-    <div class="product-details">
-      <h2 class="product-title">Transformative Saundarya Night Cream</h2>
-      <p class="price">$ 36</p>
-      <p>Lorem, ipsum.</p>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-  </div>
+      {% endfor %}
   </div>
   <img  width=""  height="" src="{{ 'right.png' | asset_url }}" class="scroll-arrow" id="left-arrow2" alt="Scroll Left">
 </div>
