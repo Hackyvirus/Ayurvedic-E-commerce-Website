@@ -1,31 +1,147 @@
+<style>
+
+.products-container {
+  width: 81vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.cart-item {
+margin-bottom: 10px;
+height: 100%;
+border: 1px solid;
+width: 270px;
+text-decoration: none;
+}
+.cart-product-img{
+  width: 100%;
+}
+.product-details {
+padding: 10px;
+display: flex;
+flex-direction: column;
+align-items: start;
+color: #000;
+justify-content: space-around;
+box-sizing: border-box;
+}
+
+.remove-btn {
+width: 50%;
+background: radial-gradient(#748c3c,#5f7728,#4b5e1e);
+border: none;
+padding: 4px 0px;
+font-size: 14px;
+font-family: Lora;
+}
+.update-item{
+width: 100%;
+display: flex;
+}
+
+/* Example styling for the input */
+.up-down {
+  height: 28px;
+  width: 50%;
+  padding: 4px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Optional: Example styling for the button */
+.up-down:focus {
+  outline: none;
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.last-step {
+	width: 50%;
+	height: 40px;
+	/* margin: auto; */
+  background: radial-gradient(#748c3c,#5f7728,#4b5e1e);
+  border: 0;
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: Lora;
+	font-weight: normal;
+	color: white;
+	margin: 20px 0;
+}
+.cart-total {
+	font-weight: 700;
+	margin-top: 20px;
+	font-family: Lora;
+	font-size: 25px;
+}
+.imp-btn {
+	width: 50%;
+	height: 50px;
+	background: white;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 5px;
+	color: #000;
+	border: 1px solid black;
+	font-family: Lora;
+}
+
+.imp-btn:hover{
+  background: radial-gradient(#748c3c,#5f7728,#4b5e1e);
+}
+.check-out{
+  width: 81dvw;
+  margin: auto;
+}
+</style>
+
 <div class="cart">
   <div class="slider-title">
     <h2>Your Cart</h2>
-</div>
+  </div>
+  
   {% if cart.item_count > 0 %}
-    
-    <form action="/cart" method="post" novalidate>
+    <form class="products-container" action="/cart" method="post" novalidate>
       <div class="cart-items">
         {% for item in cart.items %}
           <div class="cart-item">
-            <p>{{ item.product.title }}</p>
-            <span>Price: {{ item.line_price | money }}</span>
-            <input type="number" name="updates[{{ item.key }}]" value="{{ item.quantity }}" min="1">
-            <button type="submit" name="updates[{{ item.key }}]" value="0">Remove</button>
+    <img width="" height="" class="cart-product-img" src="{{ item.image.src | img_url: 'medium' }}" alt="{{ item.product.title }}">
+
+      <div class="product-details">
+        <h2 class="product-title">{{ item.product.title }}</h2>
+        <p class="price">Price: {{ item.line_price | money }}</p>
+        <p class="description">{{ item.product.description }}</p>
+      </div>
+
+            <div class="update-item">
+              <input type="number" class="up-down" name="updates[{{ item.key }}]" value="{{ item.quantity }}" min="1" onchange="updateCartItem(this)">
+              <button class="remove-btn" type="submit" name="updates[{{ item.key }}]" value="0">Remove</button>
+            </div>
           </div>
         {% endfor %}
       </div>
       <div class="cart-total">
         <p>Total: {{ cart.total_price | money }}</p>
       </div>
-      <button type="submit" name="update" value="Update Cart">Update Cart</button>
     </form>
-    {% if customer %}
-      <a href="/checkout" class="checkout-button">Proceed to Checkout</a>
+    <div class="check-out">
+      {% if customer %}
+        <a href="/checkout" class="checkout-button imp-btn ">Proceed to Checkout</a>
+      {% else %}
+        <a href="/account/login" class="checkout-button imp-btn">Login to Checkout</a>
+      {% endif %}
     {% else %}
-      <a href="/account/login" class="checkout-button">Login to Checkout</a>
+      <p>Your cart is empty.</p>
     {% endif %}
-  {% else %}
-    <p>Your cart is empty.</p>
-  {% endif %}
-</div>
+    </div>
+    
+
+
+<script>
+  function updateCartItem(input) {
+    input.form.submit(); // Submit the form when the quantity changes
+  }
+</script>
+
