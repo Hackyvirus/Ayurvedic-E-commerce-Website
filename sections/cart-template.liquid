@@ -27,12 +27,13 @@ box-sizing: border-box;
 }
 
 .remove-btn {
-width: 50%;
-background: radial-gradient(#748c3c,#5f7728,#4b5e1e);
-border: none;
-padding: 4px 0px;
-font-size: 14px;
-font-family: Lora;
+	width: 50%;
+	background: radial-gradient(#748c3c,#5f7728,#4b5e1e);
+	border: none;
+	padding: 4px 0px;
+	font-size: 14px;
+	font-family: Lora;
+	cursor: pointer;
 }
 .update-item{
 width: 100%;
@@ -132,11 +133,11 @@ display: flex;
       {% else %}
         <a href="/account/login" class="checkout-button imp-btn">Login to Checkout</a>
       {% endif %}
-    {% else %}
-      <p>Your cart is empty.</p>
-    {% endif %}
+           {% else %}
+          <p>Your cart is empty.</p>
+           {% endif %}
     </div>
-    
+  
 
 
 <script>

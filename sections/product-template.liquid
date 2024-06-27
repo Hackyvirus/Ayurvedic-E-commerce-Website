@@ -8,26 +8,25 @@
         }
 
         .product-box {
-            width: 81dvw;
-            margin: auto;
-            background: gray;
-            display: flex;
-            justify-content: space-between;
-            height: 600px;
-        }
+	width: 81dvw;
+	margin: 50px auto 0;
+	display: flex;
+	justify-content: space-between;
+	height: 500px;
+}
         .left-product-box {
 	width: 45%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-        .right-product-box {
-            width: 50%;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
+.right-product-box {
+	width: 50%;
+	height: 450px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
         .product-details {
             padding: 10px;
             display: flex;
@@ -43,8 +42,12 @@
             font-size: 20px;
         }
         .container {
-            position: relative;
-        }
+	position: relative;
+	height: 450px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
         .mySlides {
             display: none;
@@ -397,6 +400,8 @@ showSlides(slideIndex); // Show the initial slide when the page loads
             });
         });
     });
+
+    
     var slideIndex = 1;
     showSlides(slideIndex);
 
